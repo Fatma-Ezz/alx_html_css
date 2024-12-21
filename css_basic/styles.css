@@ -12,12 +12,48 @@ body {
     height: 100vh; /* Ensure the body takes up the full height of the viewport */
 }
 
+/* Add styling for the works_on_smartphone class */
+body.works_on_smartphone {
+    background-color: #f0f0f0; /* Light background color for the whole body */
+}
+
 /* Style the header */
 header {
     background-color: #333; /* Dark background for the header */
     color: white;           /* White text for contrast */
     padding: 10px;
     text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Style the logo inside the header */
+header li:first-child {
+    font-size: 30px;  /* Bigger size for the logo */
+    margin-right: 10px; /* Space between the logo and the navigation links */
+    color: #ff6347; /* Tomato color for the logo */
+}
+
+/* Style the header list items */
+header ul {
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin: 0 15px;
+}
+
+/* Style the links in the header */
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
 }
 
 /* Style the main container */
@@ -36,6 +72,8 @@ article {
     max-height: 100vh; /* Prevent article from overflowing the viewport */
     padding: 10px;
     background-color: #f4f4f4; /* Light gray background for the article */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Style the aside */
@@ -44,6 +82,8 @@ aside {
     overflow-y: auto; /* Allows scrolling within the aside */
     padding: 10px;
     background-color: #e9e9e9; /* Slightly darker gray background for the aside */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Style the footer */
@@ -79,4 +119,38 @@ a {
 
 a:hover {
     text-decoration: underline; /* Underline links on hover */
+}
+
+/* Responsive adjustments for smartphones */
+@media (max-width: 600px) {
+    body.works_on_smartphone {
+        background-color: #fff; /* Change background color for smaller screens */
+    }
+
+    main {
+        flex-direction: column; /* Stack the article and aside vertically */
+    }
+
+    article, aside {
+        padding: 15px; /* Adjust padding on smaller screens */
+        max-height: none; /* Remove height constraint */
+    }
+
+    header {
+        text-align: left;
+        padding: 15px;
+    }
+
+    header li:first-child {
+        font-size: 40px; /* Bigger logo for smaller screens */
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header li {
+        margin: 5px 0;
+    }
 }
